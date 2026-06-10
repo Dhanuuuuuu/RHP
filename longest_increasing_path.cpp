@@ -30,4 +30,22 @@ private:
         dp[row][col] = adjm + 1;
         return dp[row][col];
     }
+
+public:
+    int longestIncreasingPath(vector<vector<int>>& matrix) {
+        int R = matrix.size();
+        int C = matrix[0].size();
+
+        vector<vector<int>> dp(R, vector<int>(C, 0));
+
+        int ans = 0;
+
+        for(int i = 0; i < R; i++) {
+            for(int j = 0; j < C; j++) {
+                ans = max(ans, dfs(matrix, dp, R, C, i, j));
+            }
+        }
+
+        return ans;
+    }
 };
