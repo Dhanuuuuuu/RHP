@@ -18,3 +18,5 @@ int main(){
         cout<<(ques[b]-ques[a-1])<<endl;
     }
 }
+
+//Program Link : https://cses.fi/problemset/task/1646/
